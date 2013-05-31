@@ -1,0 +1,45 @@
+//purpose: the computer will guess the number that you are thinking.
+ 
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+ 
+main()
+{
+ clrscr();
+ int high, low, x, count;
+ char chr;
+ randomize();
+ 
+ gotoxy(25, 1);
+  printf("Press:");
+ gotoxy(25, 2);
+  printf("w = higher");
+ gotoxy(25, 3);
+  printf("s = lower");
+ gotoxy(25, 4);
+ printf("x = yes or end");
+ 
+ high=101; low=count=0;
+ while(chr!='x')
+ {
+  do
+    x=random(100)+1;
+  while(x<=low||x>=high);
+  gotoxy(1, 1);
+   printf("Is it %d?\n", x);
+  count++;
+  chr=getch();
+  if(chr=='w')
+   low=x;
+  else
+   if(chr=='s')
+    high=x;
+ }
+ clrscr();
+ printf("Computer guessed.......... %d\n", count);
+ printf("The # you were thinking is %d", x);
+ 
+ getch();
+ return 0;
+}
